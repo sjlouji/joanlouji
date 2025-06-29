@@ -6,8 +6,7 @@ export function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 px-4 py-3 sm:px-6 md:px-8 bg-background/80 backdrop-blur-sm">
       <div className="container mx-auto flex h-14 items-center">
         <Link href="#" className="mr-6 flex items-center space-x-2" prefetch={false}>
-          <Sparkles className="h-6 w-6 text-accent-foreground" />
-          <span className="font-bold font-headline text-lg">Ethereal Folio</span>
+          <span className="font-bold text-lg text-primary">Ethereal Folio</span>
         </Link>
         <nav className="hidden md:flex items-center space-x-6 text-sm font-medium ml-auto">
           <Link

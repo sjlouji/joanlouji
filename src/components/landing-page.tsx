@@ -1,8 +1,7 @@
 "use client";
 
 import type { PortfolioData } from '@/lib/data';
-import React, { useState, useTransition } from 'react';
-import { useFormState } from 'react-dom';
+import React, { useState, useTransition, useActionState, useEffect } from 'react';
 import { personalizeContentAction } from '@/app/actions';
 import { useToast } from "@/hooks/use-toast";
 
@@ -23,7 +22,7 @@ export function LandingPage({ initialData }: LandingPageProps) {
   const { toast } = useToast();
   const [isPending, startTransition] = useTransition();
 
-  const [state, formAction] = useFormState(personalizeContentAction, {
+  const [state, formAction] = useActionState(personalizeContentAction, {
     success: false,
     error: null,
     data: null,
@@ -31,7 +30,7 @@ export function LandingPage({ initialData }: LandingPageProps) {
 
   const [content, setContent] = useState(initialData);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (state.success && state.data) {
       setContent(prevContent => ({
         ...prevContent,

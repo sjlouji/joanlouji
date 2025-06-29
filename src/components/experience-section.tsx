@@ -19,29 +19,25 @@ interface ExperienceSectionProps {
 export function ExperienceSection({ experience }: ExperienceSectionProps) {
   return (
     <SectionWrapper id="experience" title="Work Experience">
-      <div className="relative max-w-3xl mx-auto">
-        <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-border -translate-x-1/2 hidden md:block" aria-hidden="true" />
+      <div className="max-w-3xl mx-auto space-y-8">
         {experience.map((job, index) => (
           <AnimatedSection key={index} delay={index * 150}>
-            <div className="md:grid md:grid-cols-2 md:gap-8 mb-8">
-              <div className={`flex items-center gap-4 ${index % 2 === 0 ? 'md:col-start-2' : 'md:col-start-1 md:text-right'}`}>
-                {index % 2 === 0 ? null : <div className="hidden md:block w-full" />}
-                <div className="hidden md:block bg-background p-2 rounded-full border">
-                  <Icon name={job.icon} className="h-6 w-6 text-primary" />
+            <Card className="hover:shadow-lg transition-shadow duration-300 text-left">
+              <CardHeader>
+                <div className="flex items-start gap-4">
+                   <div className="bg-secondary p-3 rounded-full border">
+                     <Icon name={job.icon} className="h-6 w-6 text-primary" />
+                   </div>
+                   <div className="flex-1">
+                     <CardTitle>{job.role}</CardTitle>
+                     <CardDescription>{job.company} | {job.period}</CardDescription>
+                     <CardContent className="p-0 pt-4">
+                        <p className="text-muted-foreground">{job.description}</p>
+                     </CardContent>
+                   </div>
                 </div>
-              </div>
-              <div className={index % 2 === 0 ? 'md:col-start-1 md:row-start-1 md:text-right' : 'md:col-start-2'}>
-                <Card className="hover:shadow-lg transition-shadow duration-300">
-                  <CardHeader>
-                    <CardTitle>{job.role}</CardTitle>
-                    <CardDescription>{job.company} | {job.period}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">{job.description}</p>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
+              </CardHeader>
+            </Card>
           </AnimatedSection>
         ))}
       </div>

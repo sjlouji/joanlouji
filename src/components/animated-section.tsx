@@ -40,8 +40,8 @@ export function AnimatedSection({ children, className, delay = 0 }: AnimatedSect
     <div
       ref={ref}
       className={cn(
-        'transition-all duration-700 ease-in-out',
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8',
+        'transition-all duration-1000 ease-in-out',
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5',
         className
       )}
       style={{ transitionDelay: `${delay}ms` }}
