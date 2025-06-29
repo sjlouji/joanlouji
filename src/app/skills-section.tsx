@@ -18,14 +18,12 @@ export function SkillsSection({ skills }: SkillsSectionProps) {
       <div className="max-w-4xl mx-auto">
         <div className="flex flex-wrap justify-center gap-3">
           {skills.map((skill, index) => (
-            <AnimatedSection key={skill.name} delay={index * 50}>
-              <Badge
-                variant="secondary"
-                className="text-base px-4 py-2 transition-colors duration-300"
-              >
-                {skill.name}
-              </Badge>
-            </AnimatedSection>
+            <Badge
+              variant="secondary"
+              className="text-base px-4 py-2 transition-colors duration-300"
+            >
+              {skill.name}
+            </Badge>
           ))}
         </div>
       </div>

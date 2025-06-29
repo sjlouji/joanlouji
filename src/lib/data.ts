@@ -1,8 +1,10 @@
 export const portfolioData = {
   name: "Joan Louji",
-  title: "Full-Stack Developer",
+  title: "Velocity-First Engineer",
+  subTitle:
+    "Hey, I’m Joan Louji, an Software Engineer logistics problems into product since 2020.",
   about:
-    "A passionate full-stack developer with a flair for creating elegant, user-centric web experiences. With over 5 years in the industry, I've honed my skills in modern web technologies, bridging the gap between beautiful design and robust functionality. I thrive on solving complex problems and turning innovative ideas into reality.",
+    "Hey, I’m Joan Louji, an Software Engineer logistics problems into product since 2020.",
   logo: "/images/logo.png",
   sections: [
     { name: "About", href: "#about" },

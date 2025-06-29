@@ -35,42 +35,40 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
     >
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project, index) => (
-          <AnimatedSection key={project.title} delay={index * 100}>
-            <Card className="flex flex-col h-full overflow-hidden group transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-              <CardHeader>
-                <div className="aspect-video relative overflow-hidden rounded-t-lg">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                    data-ai-hint={project["data-ai-hint"]}
-                  />
-                </div>
-              </CardHeader>
-              <CardContent className="flex-grow">
-                <CardTitle className="font-headline text-2xl mb-2">
-                  {project.title}
-                </CardTitle>
-                <CardDescription>{project.description}</CardDescription>
-              </CardContent>
-              <CardFooter className="flex-wrap gap-2 pt-4">
-                {project.tags.map((tag) => (
-                  <Badge key={tag} variant="secondary">
-                    {tag}
-                  </Badge>
-                ))}
-                <Link
-                  href={project.link}
-                  className="ml-auto text-primary inline-flex items-center gap-1 group-hover:underline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  View <ArrowUpRight className="w-4 h-4" />
-                </Link>
-              </CardFooter>
-            </Card>
-          </AnimatedSection>
+          <Card className="flex flex-col h-full overflow-hidden group transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+            <CardHeader>
+              <div className="aspect-video relative overflow-hidden rounded-t-lg">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  data-ai-hint={project["data-ai-hint"]}
+                />
+              </div>
+            </CardHeader>
+            <CardContent className="flex-grow">
+              <CardTitle className="font-headline text-2xl mb-2">
+                {project.title}
+              </CardTitle>
+              <CardDescription>{project.description}</CardDescription>
+            </CardContent>
+            <CardFooter className="flex-wrap gap-2 pt-4">
+              {project.tags.map((tag) => (
+                <Badge key={tag} variant="secondary">
+                  {tag}
+                </Badge>
+              ))}
+              <Link
+                href={project.link}
+                className="ml-auto text-primary inline-flex items-center gap-1 group-hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View <ArrowUpRight className="w-4 h-4" />
+              </Link>
+            </CardFooter>
+          </Card>
         ))}
       </div>
     </SectionWrapper>

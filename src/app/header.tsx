@@ -1,6 +1,7 @@
 import Link from "next/link";
-import Image from "next/image";
-import type { StaticImageData } from "next/image";
+
+import { MotionImage } from "@/components/motion-image";
+import { AnimatedNavLink } from "@/components/animated-nav-link";
 
 interface HeaderSectionProps {
   name: string;
@@ -11,6 +12,7 @@ interface HeaderSectionProps {
 
 export function Header({ content }: { content: HeaderSectionProps }) {
   const { name, logo, sections } = content;
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 px-4 py-3 sm:px-6 md:px-8 bg-background/80 backdrop-blur-sm">
       <div className="mx-auto flex h-14 items-center">
@@ -18,8 +20,12 @@ export function Header({ content }: { content: HeaderSectionProps }) {
           href="#"
           className="mr-6 flex items-center space-x-2"
           prefetch={false}
+          onClick={(e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
         >
-          <Image
+          <MotionImage
             src={logo}
             alt={name}
             width={52}
@@ -29,14 +35,9 @@ export function Header({ content }: { content: HeaderSectionProps }) {
         </Link>
         <nav className="hidden md:flex space-x-10 text-lg font-medium ml-auto">
           {sections?.map((section) => (
-            <Link
-              key={section.href}
-              href={section.href}
-              className="transition-colors hover:text-primary"
-              prefetch={false}
-            >
+            <AnimatedNavLink key={section.href} href={section.href}>
               {section.name}
-            </Link>
+            </AnimatedNavLink>
           ))}
         </nav>
       </div>
