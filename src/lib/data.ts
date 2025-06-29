@@ -1,18 +1,74 @@
+import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
+
 export const portfolioData = {
   name: "Joan Louji",
   title: "Velocity-First Engineer",
   subTitle:
-    "Hey, I’m Joan Louji, an Software Engineer logistics problems into product since 2020.",
-  about:
-    "Hey, I’m Joan Louji, an Software Engineer logistics problems into product since 2020.",
+    "Hey, I'm Joan Louji, an Software Engineer logistics problems into product since 2020.",
   logo: "/images/logo.png",
   sections: [
     { name: "About", href: "#about" },
-    { name: "Skills", href: "#skills" },
     { name: "Experience", href: "#experience" },
     { name: "Projects", href: "#projects" },
     { name: "Contact", href: "#contact" },
   ],
+  about: {
+    name: "Joan Louji",
+    description: [
+      "Engineer by profession, Working at Pando who is passionate about developing new software products and writing efficient algorithms. I enjoy being part of a major Autonomous Supply chain product development team, solving complex supply chain problems, enhancing products, and contributing to solutions that make a real impact.",
+      "I graduated from Loyola ICAM College of Engineering and Technology (LICET), Chennai, in 2020 with a B.Tech degree. During my time in college, I delved into Native Android and iOS development, freelanced on various projects, and contributed to open-source communities.",
+      "Apart from my technical pursuits, I have a creative side too. I love playing the keyboard, and I used to play football and tennis regularly during my college days.",
+    ],
+    links: [
+      {
+        color: "bg-green-600",
+        title: "GitHub",
+        subtitle: "Explore my open-source projects.",
+        url: "https://github.com/sjlouji/",
+        logo: "/images/github.svg",
+      },
+      {
+        color: "bg-black",
+        title: "Medium",
+        subtitle: "Read my articles on software engineering.",
+        url: "https://medium.com/@sjlouji10",
+        logo: "/images/medium.png",
+      },
+      {
+        color: "bg-blue-700",
+        title: "Dev",
+        subtitle: "Check out my technical blogs, tutorials, and my discussions",
+        url: "https://dev.to/sjlouji",
+        logo: "/images/dev.png",
+      },
+    ],
+    skillsDescription: "Skills I'm familiar with and my interests",
+    skills: [
+      { name: "JavaScript", logo: "/images/js.png" },
+      { name: "TypeScript", logo: "/images/typescript.png" },
+      { name: "React", logo: "/images/react.png" },
+      { name: "Next.js", logo: "/images/icons8-next.js-480.png" },
+      { name: "Node.js", logo: "/images/node-js.png" },
+      { name: "Java", logo: "/images/java.png" },
+      { name: "Python", logo: "/images/python.png" },
+      { name: "Flutter", logo: "/images/icons8-flutter-480.png" },
+      {
+        name: "Nginx",
+        logo: "/images/nginx.png",
+      },
+      { name: "Redis", logo: "/images/icons8-redis-480.png" },
+      { name: "Postgres", logo: "/images/icons8-postgres-480.png" },
+      { name: "MongoDB", logo: "/images/icons8-mongodb-480.png" },
+      { name: "Docker", logo: "/images/docker.png" },
+      { name: "Git", logo: "/images/social.png" },
+      { name: "LangChain", logo: "/images/langchain.png" },
+      { name: "AWS", logo: "/images/icons8-aws-logo-480.png" },
+      { name: "Blogging", logo: "/images/medium.png" },
+      { name: "Audio Engineering", logo: "" },
+      { name: "LLMs", logo: "" },
+    ],
+  },
   workHistory: [
     {
       role: "Senior Frontend Developer",
@@ -20,7 +76,7 @@ export const portfolioData = {
       period: "2021 - Present",
       description:
         "Led the development of a large-scale e-commerce platform, focusing on performance and user experience. Mentored junior developers and implemented a new component library in React and TypeScript.",
-      icon: "Briefcase",
+      logo: "Briefcase",
     },
     {
       role: "Full-Stack Developer",
@@ -28,7 +84,7 @@ export const portfolioData = {
       period: "2018 - 2021",
       description:
         "Developed and maintained various client websites and web applications using the MERN stack. Collaborated with designers to create pixel-perfect interfaces and worked on backend APIs.",
-      icon: "Briefcase",
+      logo: "Briefcase",
     },
     {
       role: "Junior Web Developer",
@@ -36,21 +92,8 @@ export const portfolioData = {
       period: "2016 - 2018",
       description:
         "Started my journey by building and maintaining WordPress sites for small businesses. Gained foundational skills in HTML, CSS, JavaScript, and PHP.",
-      icon: "Briefcase",
+      logo: "Briefcase",
     },
-  ],
-  skills: [
-    { name: "JavaScript (ES6+)", icon: "Code" },
-    { name: "TypeScript", icon: "Code" },
-    { name: "React", icon: "Code" },
-    { name: "Next.js", icon: "Code" },
-    { name: "Node.js", icon: "Code" },
-    { name: "GraphQL", icon: "Code" },
-    { name: "UI/UX Design", icon: "Lightbulb" },
-    { name: "Figma", icon: "Lightbulb" },
-    { name: "Tailwind CSS", icon: "Code" },
-    { name: "Firebase", icon: "Code" },
-    { name: "Agile Methodologies", icon: "Lightbulb" },
   ],
   projects: [
     {
@@ -84,11 +127,11 @@ export const portfolioData = {
   contact: {
     email: "alex.doe@example.com",
     socials: [
-      { name: "LinkedIn", url: "https://linkedin.com/in/", icon: "Linkedin" },
-      { name: "GitHub", url: "https://github.com/", icon: "Github" },
-      { name: "Twitter", url: "https://twitter.com/", icon: "Twitter" },
+      { name: "LinkedIn", url: "https://linkedin.com/in/", logo: "Linkedin" },
+      { name: "GitHub", url: "https://github.com/", logo: "Github" },
+      { name: "Twitter", url: "https://twitter.com/", logo: "Twitter" },
     ],
-    icon: "Mail",
+    logo: "Mail",
   },
 };
 

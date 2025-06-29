@@ -84,6 +84,7 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        desc: "#3d3d3d",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -111,6 +112,12 @@ export default {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+      },
+      fontSize: {
+        desc: ["26px", { lineHeight: "1.5" }],
+      },
+      fontWeight: {
+        medium: "500",
       },
     },
   },

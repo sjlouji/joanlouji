@@ -26,12 +26,8 @@ export function LandingPage({ initialData }: LandingPageProps) {
       <main className="flex-1">
         <HeroSection content={content} />
         <AboutSection about={initialData.about} />
-        {/* @ts-expect-error: icon type mismatch */}
-        <SkillsSection skills={content.skills} />
-        {/* @ts-expect-error: icon type mismatch */}
         <ExperienceSection experience={content.workHistory} />
         <ProjectsSection projects={content.projects} />
-        {/* @ts-expect-error: icon type mismatch */}
         <ContactSection contact={initialData.contact} />
       </main>
       <Footer name={initialData.name} />
