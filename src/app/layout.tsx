@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { Toaster } from "@/components/ui/toaster";
-import "./globals.css";
+import "../assets/styles/globals.css";
+import { Toaster } from "../components/toaster";
 
 export const metadata: Metadata = {
-  title: "Ethereal Folio",
+  title: "Joan Louji",
   description: "A portfolio that exhibits abilities and projects.",
+  icons: ["../assets/favicon.ico"],
 };
 
 export default function RootLayout({

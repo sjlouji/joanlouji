@@ -1,14 +1,24 @@
-import Link from 'next/link';
-import { Sparkles } from 'lucide-react';
+import Link from "next/link";
+import Image from "next/image";
 
 export function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 px-4 py-3 sm:px-6 md:px-8 bg-background/80 backdrop-blur-sm">
       <div className="container mx-auto flex h-14 items-center">
-        <Link href="#" className="mr-6 flex items-center space-x-2" prefetch={false}>
-          <span className="font-bold text-lg text-primary">Ethereal Folio</span>
+        <Link
+          href="#"
+          className="mr-6 flex items-center space-x-2"
+          prefetch={false}
+        >
+          <Image
+            src="/images/logo.png"
+            alt="Joan Louji"
+            width={32}
+            height={32}
+            className="w-12 h-12"
+          />
         </Link>
-        <nav className="hidden md:flex items-center space-x-6 text-sm font-medium ml-auto">
+        <nav className="hidden md:flex space-x-10 text-lg font-medium ml-auto">
           <Link
             href="#about"
             className="transition-colors hover:text-primary"

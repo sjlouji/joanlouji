@@ -1,5 +1,5 @@
-import { SectionWrapper } from './section-wrapper';
-import { AnimatedSection } from './animated-section';
+import { SectionWrapper } from "./section-wrapper";
+import { AnimatedSection } from "../components/animated-section";
 
 interface AboutSectionProps {
   about: string;

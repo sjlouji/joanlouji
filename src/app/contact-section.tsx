@@ -1,10 +1,8 @@
-
-import { SectionWrapper } from './section-wrapper';
-import { AnimatedSection } from './animated-section';
-import { Button } from '@/components/ui/button';
-import Link from 'next/link';
-import { MoveRight } from 'lucide-react';
-import { Icon, type IconName } from '@/components/icon';
+import { SectionWrapper } from "./section-wrapper";
+import { AnimatedSection } from "../components/animated-section";
+import { Button } from "../components/button";
+import Link from "next/link";
+import { Icon, type IconName } from "../components/icon";
 
 interface Contact {
   email: string;
@@ -26,7 +24,8 @@ export function ContactSection({ contact }: ContactSectionProps) {
       <AnimatedSection>
         <div className="max-w-xl mx-auto text-center space-y-6">
           <p className="text-lg text-muted-foreground">
-            I'm always open to discussing new projects, creative ideas, or opportunities to be part of an amazing team. Feel free to reach out.
+            I'm always open to discussing new projects, creative ideas, or
+            opportunities to be part of an amazing team. Feel free to reach out.
           </p>
           <Button asChild size="lg">
             <a href={`mailto:${contact.email}`}>
@@ -34,9 +33,18 @@ export function ContactSection({ contact }: ContactSectionProps) {
             </a>
           </Button>
           <div className="flex justify-center gap-6 pt-4">
-            {contact.socials.map(social => (
-              <Link key={social.name} href={social.url} target="_blank" rel="noopener noreferrer" aria-label={social.name}>
-                <Icon name={social.icon} className="h-7 w-7 text-muted-foreground transition-colors hover:text-primary" />
+            {contact.socials.map((social) => (
+              <Link
+                key={social.name}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={social.name}
+              >
+                <Icon
+                  name={social.icon}
+                  className="h-7 w-7 text-muted-foreground transition-colors hover:text-primary"
+                />
               </Link>
             ))}
           </div>

@@ -1,8 +1,7 @@
-
-import { SectionWrapper } from './section-wrapper';
-import { AnimatedSection } from './animated-section';
-import { Badge } from '@/components/ui/badge';
-import { type IconName } from '@/components/icon';
+import { SectionWrapper } from "./section-wrapper";
+import { AnimatedSection } from "../components/animated-section";
+import { Badge } from "../components/badge";
+import { type IconName } from "../components/icon";
 
 interface Skill {
   name: string;
@@ -20,7 +19,10 @@ export function SkillsSection({ skills }: SkillsSectionProps) {
         <div className="flex flex-wrap justify-center gap-3">
           {skills.map((skill, index) => (
             <AnimatedSection key={skill.name} delay={index * 50}>
-              <Badge variant="secondary" className="text-base px-4 py-2 transition-colors duration-300">
+              <Badge
+                variant="secondary"
+                className="text-base px-4 py-2 transition-colors duration-300"
+              >
                 {skill.name}
               </Badge>
             </AnimatedSection>
