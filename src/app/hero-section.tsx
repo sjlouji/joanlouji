@@ -1,27 +1,5 @@
 "use client";
 
-import { useFormStatus } from "react-dom";
-import { Button } from "../components/button";
-import { Sparkles, LoaderCircle } from "lucide-react";
-
-interface HeroSectionProps {
-  name: string;
-  title: string;
-  intro: string;
-  formAction: (formData: FormData) => void;
-  isPending: boolean;
-}
-
-function SubmitButton() {
-  const { pending } = useFormStatus();
-  return (
-    <Button type="submit" disabled={pending} className="w-full sm:w-auto">
-      {pending ? <LoaderCircle className="animate-spin" /> : <Sparkles />}
-      Personalize
-    </Button>
-  );
-}
-
 export function HeroSection() {
   return (
     <section className="w-full min-h-[70vh] flex items-center py-24 sm:py-32 lg:py-48">

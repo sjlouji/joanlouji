@@ -4,8 +4,7 @@ import { Toaster } from "../components/toaster";
 
 export const metadata: Metadata = {
   title: "Joan Louji",
-  description: "A portfolio that exhibits abilities and projects.",
-  icons: ["../assets/favicon.ico"],
+  description: "My developer portfolio built to showcase my works and skills.",
 };
 
 export default function RootLayout({
