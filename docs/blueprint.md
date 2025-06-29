@@ -1,4 +1,4 @@
-# **App Name**: Ethereal Folio
+# **App Name**: Joan Louji
 
 ## Core Features:
 
