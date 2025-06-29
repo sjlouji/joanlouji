@@ -125,13 +125,24 @@ export const portfolioData = {
     },
   ],
   contact: {
-    email: "alex.doe@example.com",
+    email: "sjlouji10@gmail.com",
     socials: [
-      { name: "LinkedIn", url: "https://linkedin.com/in/", logo: "Linkedin" },
-      { name: "GitHub", url: "https://github.com/", logo: "Github" },
-      { name: "Twitter", url: "https://twitter.com/", logo: "Twitter" },
+      {
+        name: "LinkedIn",
+        url: "https://linkedin.com/in/sjlouji",
+        logo: "/images/LI-In-Bug.png",
+      },
+      {
+        name: "Twitter",
+        url: "https://x.com/JoanLouji",
+        logo: "/images/icons8-x-500.png",
+      },
+      {
+        name: "GitHub",
+        url: "https://github.com/sjlouji",
+        logo: "/images/github.png",
+      },
     ],
-    logo: "Mail",
   },
 };
 

@@ -5,7 +5,6 @@ import type { PortfolioData } from "@/lib/data";
 import { Header } from "@/app/header";
 import { HeroSection } from "@/app/hero-section";
 import { AboutSection } from "@/app/about-section";
-import { SkillsSection } from "@/app/skills-section";
 import { ExperienceSection } from "@/app/experience-section";
 import { ProjectsSection } from "@/app/projects-section";
 import { ContactSection } from "@/app/contact-section";
@@ -28,6 +27,10 @@ export function LandingPage({ initialData }: LandingPageProps) {
         <AboutSection about={initialData.about} />
         <ExperienceSection experience={content.workHistory} />
         <ProjectsSection projects={content.projects} />
+        <hr
+          className="container mx-auto my-12 border-t-2"
+          style={{ borderColor: "#111", borderTopWidth: "2px" }}
+        />{" "}
         <ContactSection contact={initialData.contact} />
       </main>
       <Footer name={initialData.name} />
