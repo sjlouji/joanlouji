@@ -1,6 +1,8 @@
 import { LandingPage } from "@/app/landing-page";
 import { portfolioData } from "@/lib/data";
+import { fetchMediumPosts } from "@/lib/fetchMedium";
 
-export default function Home() {
-  return <LandingPage initialData={portfolioData} />;
+export default async function Page() {
+  const blogs = await fetchMediumPosts("sjlouji10");
+  return <LandingPage initialData={portfolioData} blogs={blogs} />;
 }

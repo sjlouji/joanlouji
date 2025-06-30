@@ -6,8 +6,8 @@ export const portfolioData = {
   logo: "/images/logo.png",
   sections: [
     { name: "About", href: "#about" },
-    { name: "Experience", href: "#experience" },
     { name: "Works", href: "#works" },
+    { name: "Posts", href: "#posts" },
     { name: "Contact", href: "#contact" },
   ],
   about: {
@@ -59,32 +59,6 @@ export const portfolioData = {
       { name: "LLMs", logo: "" },
     ],
   },
-  workHistory: [
-    {
-      role: "Senior Frontend Developer",
-      company: "Innovate Inc.",
-      period: "2021 - Present",
-      description:
-        "Led the development of a large-scale e-commerce platform, focusing on performance and user experience. Mentored junior developers and implemented a new component library in React and TypeScript.",
-      icon: "Code",
-    },
-    {
-      role: "Full-Stack Developer",
-      company: "Tech Solutions LLC",
-      period: "2018 - 2021",
-      description:
-        "Developed and maintained various client websites and web applications using the MERN stack. Collaborated with designers to create pixel-perfect interfaces and worked on backend APIs.",
-      icon: "Code",
-    },
-    {
-      role: "Junior Web Developer",
-      company: "Creative Agency",
-      period: "2016 - 2018",
-      description:
-        "Started my journey by building and maintaining WordPress sites for small businesses. Gained foundational skills in HTML, CSS, JavaScript, and PHP.",
-      icon: "Code",
-    },
-  ],
   works: [
     {
       date: "June 2025",
@@ -289,7 +263,7 @@ export const portfolioData = {
     addressLabel: "My Address",
     address: [
       "Joan Louji",
-      "13/7, Lake Area 3rd Cross Street",
+      "13/7, Lake Area 3rd Cross Street,",
       "Nungambakkam, Chennai – 34.",
     ],
     socialsLabel: "Follow Me",
