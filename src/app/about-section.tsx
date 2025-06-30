@@ -1,73 +1,76 @@
+import Image from "next/image";
 import { Container, Row, Col } from "react-grid-system";
 import { ArrowUpRight } from "lucide-react";
-import Image from "next/image";
 import Marquee from "react-fast-marquee";
+import { motion } from "framer-motion";
 
 import { SectionWrapper } from "@/app/section-wrapper";
-import { ZoomOnHover } from "@/components/ui/zoom-on-hover";
-
-interface AboutSectionProps {
-  name: string;
-  description: string[];
-  skillsDescription: string;
-  links: {
-    logo: string;
-    title: string;
-    subtitle: string;
-    url: string;
-  }[];
-  skills: {
-    name: string;
-    logo?: string;
-    icon?: string;
-  }[];
-}
+import { ZoomOnHover } from "@/components/zoom-on-hover";
+import type { AboutSectionProps } from "@/types/about";
+import { Project } from "@/types/project";
 
 export function AboutSection({ about }: { about: AboutSectionProps }) {
   return (
     <SectionWrapper id="about" title="About">
       <Container fluid style={{ padding: 0 }}>
         <Row gutterWidth={32}>
-          <Col xs={12} md={7}>
+          <Col xs={12} md={8}>
             <div className="space-y-6">
-              {about.description.map((text, i) => (
+              {about.description.map((text: string, i: number) => (
                 <p key={i}>{text}</p>
               ))}
             </div>
           </Col>
-          <Col xs={12} md={5}>
+          <Col xs={12} md={4}>
             <div className="space-y-6 mt-8 md:mt-0">
-              {about.links.map((link) => (
-                <ZoomOnHover key={link.title} className="w-full" zoom={0.96}>
-                  <a
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block rounded-xl border p-4 md:p-6 bg-background shadow-sm transition hover:shadow-md"
-                  >
-                    <div className="flex flex-col items-start gap-2 min-w-0">
-                      <div className="flex items-center gap-2 w-full">
-                        <div className="flex items-center gap-2 w-full">
-                          <Image
-                            src={link.logo}
-                            alt={link.title}
-                            width={30}
-                            height={30}
-                            className="rounded"
-                          />
-                          <span className="font-semibold text-lg pl-4">
-                            {link.title}
-                          </span>
+              <div className="flex flex-wrap items-center gap-2 mt-2">
+                <div className="divide-y w-full">
+                  {about.links.map((link) => {
+                    return (
+                      <div
+                        key={link.title}
+                        className="flex flex-col transition-colors py-6"
+                      >
+                        <div className="flex items-start">
+                          <div className="w-24 flex-shrink-0 text-xs uppercase text-gray-400 pt-1">
+                            <motion.span
+                              key={link.logo}
+                              className="inline-block text-xs md:text-sm font-mono  rounded px-2 py-0.5 leading-tight"
+                              whileHover={{
+                                scale: 1.12,
+                              }}
+                              transition={{ type: "spring", stiffness: 300 }}
+                            >
+                              <Image
+                                src={link.logo}
+                                alt={link.title}
+                                width={28}
+                                height={28}
+                                className="inline-block"
+                                unoptimized={link.logo.startsWith("http")}
+                              />
+                            </motion.span>
+                          </div>
+                          <div className="flex-1">
+                            <motion.a
+                              href={link.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center text-2xl md:text-2xl font-mono font-medium text-gray-900 hover:underline focus:underline transition group"
+                              whileHover={{ x: 8 }}
+                            >
+                              {link.title}
+                            </motion.a>
+                            <div className="font-sans text-base md:text-lg text-gray-600 mb-2 mt-2">
+                              {link.subtitle}
+                            </div>
+                          </div>
                         </div>
-                        <ArrowUpRight className="w-4 h-4" />
                       </div>
-                      <div className="text-sm text-muted-foreground">
-                        {link.subtitle}
-                      </div>
-                    </div>
-                  </a>
-                </ZoomOnHover>
-              ))}
+                    );
+                  })}
+                </div>
+              </div>
             </div>
           </Col>
         </Row>
@@ -76,33 +79,38 @@ export function AboutSection({ about }: { about: AboutSectionProps }) {
             <div className="mt-10">
               <Marquee
                 gradient
-                gradientColor="rgb(239 246 255 / var(--tw-bg-opacity, 1))"
+                gradientColor="white"
                 gradientWidth={150}
                 pauseOnHover={true}
                 speed={50}
               >
-                {about.skills.map((skill, i) => (
-                  <span key={skill.name}>
-                    <ZoomOnHover
-                      key={skill.name}
-                      className="mx-4 md:mx-8 flex items-center gap-x-4 text-base md:text-xl font-medium text-muted-foreground cursor-pointer"
-                    >
-                      {skill.logo && (
-                        <Image
-                          src={skill.logo}
-                          alt={skill.name}
-                          width={28}
-                          height={28}
-                          className="inline-block"
-                          unoptimized={skill.logo.startsWith("http")}
-                        />
-                      )}
-                      <span className="whitespace-nowrap ml-2 mt-4">
-                        {skill.name}
-                      </span>
-                    </ZoomOnHover>
-                  </span>
-                ))}
+                {about.skills.map(
+                  (
+                    skill: { name: string; logo?: string; icon?: string },
+                    i: number
+                  ) => (
+                    <span key={skill.name}>
+                      <ZoomOnHover
+                        key={skill.name}
+                        className="mx-4 md:mx-8 flex items-center gap-x-4 text-base md:text-xl font-medium text-muted-foreground cursor-pointer"
+                      >
+                        {skill.logo && (
+                          <Image
+                            src={skill.logo}
+                            alt={skill.name}
+                            width={28}
+                            height={28}
+                            className="inline-block"
+                            unoptimized={skill.logo.startsWith("http")}
+                          />
+                        )}
+                        <span className="whitespace-nowrap ml-2 mt-4">
+                          {skill.name}
+                        </span>
+                      </ZoomOnHover>
+                    </span>
+                  )
+                )}
               </Marquee>
             </div>
           </Col>

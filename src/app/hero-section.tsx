@@ -1,14 +1,11 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
 import * as React from "react";
+import { motion, useInView } from "framer-motion";
 
-interface HeaderSectionProps {
-  title: string;
-  subTitle: string;
-}
+import type { HeroSectionProps } from "@/types/hero";
 
-export function HeroSection({ content }: { content: HeaderSectionProps }) {
+export function HeroSection({ content }: { content: HeroSectionProps }) {
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true });
   const { title, subTitle } = content;
@@ -31,7 +28,7 @@ export function HeroSection({ content }: { content: HeaderSectionProps }) {
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-4xl">
           <h1 className="text-6xl sm:text-7xl md:text-9xl font-medium leading-tight tracking-tight text-left flex flex-wrap gap-3">
-            {splittedText.map((word, i) => (
+            {splittedText.map((word: string, i: number) => (
               <span key={i} className="-hidden block">
                 <motion.span
                   key={i}

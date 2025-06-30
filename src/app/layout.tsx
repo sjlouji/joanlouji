@@ -1,11 +1,6 @@
-import type { Metadata } from "next";
-import "../assets/styles/globals.css";
-import { Toaster } from "../components/toaster";
+import "@/assets/styles/globals.css";
 
-export const metadata: Metadata = {
-  title: "Joan Louji",
-  description: "My developer portfolio built to showcase my works and skills.",
-};
+import { Toaster } from "@/components/toaster";
 
 export default function RootLayout({
   children,

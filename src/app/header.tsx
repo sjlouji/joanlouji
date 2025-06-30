@@ -2,13 +2,7 @@ import Link from "next/link";
 
 import { MotionImage } from "@/components/motion-image";
 import { AnimatedNavLink } from "@/components/animated-nav-link";
-
-interface HeaderSectionProps {
-  name: string;
-  title: string;
-  logo: string;
-  sections?: { name: string; href: string }[];
-}
+import type { HeaderSectionProps } from "@/types/header";
 
 export function Header({ content }: { content: HeaderSectionProps }) {
   const { name, logo, sections } = content;
@@ -36,7 +30,7 @@ export function Header({ content }: { content: HeaderSectionProps }) {
           />
         </Link>
         <nav className="hidden md:flex space-x-10 text-lg font-medium ml-auto">
-          {sections?.map((section) => (
+          {sections?.map((section: { name: string; href: string }) => (
             <AnimatedNavLink key={section.href} href={section.href}>
               {section.name}
             </AnimatedNavLink>

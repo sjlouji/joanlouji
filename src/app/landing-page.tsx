@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
-import type { PortfolioData } from "@/lib/data";
+import type { LandingPageProps } from "@/types/landing";
 import { sectionIds } from "@/lib/data";
 
 import { Header } from "@/app/header";
@@ -12,10 +12,6 @@ import { ExperienceSection } from "@/app/experience-section";
 import { ProjectsSection } from "@/app/projects-section";
 import { ContactSection } from "@/app/contact-section";
 import { Footer } from "@/app/footer";
-
-interface LandingPageProps {
-  initialData: PortfolioData;
-}
 
 export function LandingPage({ initialData }: LandingPageProps) {
   const [activeSection, setActiveSection] = useState("hero");
@@ -77,9 +73,7 @@ export function LandingPage({ initialData }: LandingPageProps) {
             {id === "experience" && (
               <ExperienceSection experience={initialData.workHistory} />
             )}
-            {id === "projects" && (
-              <ProjectsSection projects={initialData.projects} />
-            )}
+            {id === "works" && <ProjectsSection projects={initialData.works} />}
             {id === "contact" && (
               <ContactSection contact={initialData.contact} />
             )}

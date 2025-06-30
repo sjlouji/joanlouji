@@ -1,5 +1,5 @@
-import { LandingPage } from "./landing-page";
-import { portfolioData } from "../lib/data";
+import { LandingPage } from "@/app/landing-page";
+import { portfolioData } from "@/lib/data";
 
 export default function Home() {
   return <LandingPage initialData={portfolioData} />;

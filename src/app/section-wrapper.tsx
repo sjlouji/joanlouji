@@ -1,13 +1,7 @@
-import { type ReactNode } from "react";
 import { cn } from "@/lib/utils";
-import { AnimatedSection } from "@/components/animated-section";
 
-interface SectionWrapperProps {
-  id: string;
-  title?: string;
-  children: ReactNode;
-  className?: string;
-}
+import { AnimatedSection } from "@/components/animated-section";
+import type { SectionWrapperProps } from "@/types/section";
 
 export function SectionWrapper({
   id,

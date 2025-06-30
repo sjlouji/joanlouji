@@ -1,72 +1,67 @@
-import { SectionWrapper } from "./section-wrapper";
-import { AnimatedSection } from "../components/animated-section";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-} from "../components/card";
-import { Badge } from "../components/badge";
-import Image from "next/image";
-import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { useState } from "react";
+import { motion } from "framer-motion";
 
-interface Project {
-  title: string;
-  description: string;
-  image: string;
-  tags: string[];
-  link: string;
-  "data-ai-hint": string;
-}
-
-interface ProjectsSectionProps {
-  projects: Project[];
-}
+import { Pagination } from "@/components/pagination";
+import { SectionWrapper } from "@/app/section-wrapper";
+import type { Project, ProjectsSectionProps } from "@/types/project";
+import { PAGE_SIZE } from "@/lib/data";
 
 export function ProjectsSection({ projects }: ProjectsSectionProps) {
+  const [page, setPage] = useState(1);
+
+  const totalPages = Math.ceil(projects.length / PAGE_SIZE);
+  const startIdx = (page - 1) * PAGE_SIZE;
+  const visibleProjects = projects.slice(startIdx, startIdx + PAGE_SIZE);
+
   return (
-    <SectionWrapper id="projects" title="My Projects">
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {projects.map((project, index) => (
-          <Card className="flex flex-col h-full overflow-hidden group transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-            <CardHeader>
-              <div className="aspect-video relative overflow-hidden rounded-t-lg">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  data-ai-hint={project["data-ai-hint"]}
-                />
+    <SectionWrapper id="works" title="Works">
+      <div className="divide-y">
+        {visibleProjects.map((project: Project) => {
+          return (
+            <div
+              key={project.title}
+              className="flex flex-col transition-colors py-6"
+            >
+              <div className="flex items-start">
+                <div className="w-24 flex-shrink-0 text-xs uppercase text-gray-400 pt-1">
+                  {project.date}
+                </div>
+                <div className="flex-1">
+                  <motion.a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-2xl md:text-2xl font-mono font-medium text-gray-900 hover:underline focus:underline transition group"
+                    whileHover={{ x: 8 }}
+                  >
+                    {project.title}
+                  </motion.a>
+                  <div className="font-sans text-base md:text-lg text-gray-600 mb-2 mt-2">
+                    {project.description}
+                  </div>
+                  <div className="flex flex-wrap items-center gap-2 mt-2">
+                    {project.tags.map((tag) => (
+                      <motion.span
+                        key={tag}
+                        className="inline-block bg-gray-200 text-xs md:text-sm font-mono text-gray-700 rounded px-2 py-0.5 leading-tight cursor-pointer"
+                        whileHover={{
+                          scale: 1.12,
+                          backgroundColor: "#dbeafe",
+                          color: "#1e40af",
+                        }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                      >
+                        {tag}
+                      </motion.span>
+                    ))}
+                  </div>
+                </div>
               </div>
-            </CardHeader>
-            <CardContent className="flex-grow">
-              <CardTitle className="font-headline text-2xl mb-2">
-                {project.title}
-              </CardTitle>
-              <CardDescription>{project.description}</CardDescription>
-            </CardContent>
-            <CardFooter className="flex-wrap gap-2 pt-4">
-              {project.tags.map((tag) => (
-                <Badge key={tag} variant="secondary">
-                  {tag}
-                </Badge>
-              ))}
-              <Link
-                href={project.link}
-                className="ml-auto text-primary inline-flex items-center gap-1 group-hover:underline"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View <ArrowUpRight className="w-4 h-4" />
-              </Link>
-            </CardFooter>
-          </Card>
-        ))}
+            </div>
+          );
+        })}
       </div>
+      <Pagination page={page} totalPages={totalPages} onPageChange={setPage} />
     </SectionWrapper>
   );
 }

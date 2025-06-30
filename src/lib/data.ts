@@ -7,7 +7,7 @@ export const portfolioData = {
   sections: [
     { name: "About", href: "#about" },
     { name: "Experience", href: "#experience" },
-    { name: "Projects", href: "#projects" },
+    { name: "Works", href: "#works" },
     { name: "Contact", href: "#contact" },
   ],
   about: {
@@ -20,14 +20,14 @@ export const portfolioData = {
     links: [
       {
         color: "bg-green-600",
-        title: "GitHub",
+        title: "GitHub - sjlouji",
         subtitle: "Explore my open-source projects.",
         url: "https://github.com/sjlouji/",
         logo: "/images/github.svg",
       },
       {
         color: "bg-black",
-        title: "Medium",
+        title: "Medium - sjlouji10",
         subtitle: "Read my articles on software engineering.",
         url: "https://medium.com/@sjlouji10",
         logo: "/images/medium.png",
@@ -85,17 +85,18 @@ export const portfolioData = {
       icon: "Code",
     },
   ],
-  projects: [
+  works: [
     {
+      date: "June 2025",
       title: "E-Commerce Platform",
       description:
         "A feature-rich e-commerce site built with Next.js, Stripe, and GraphQL. Features a dynamic product catalog, user authentication, and a custom CMS.",
-      image: "https://placehold.co/600x400.png",
       tags: ["Next.js", "GraphQL", "Stripe"],
       link: "#",
       "data-ai-hint": "ecommerce website",
     },
     {
+      date: "June 2025",
       title: "Project Management Tool",
       description:
         "A collaborative tool for teams to manage tasks and projects. Built with React and Firebase, featuring real-time updates and a drag-and-drop interface.",
@@ -105,6 +106,7 @@ export const portfolioData = {
       "data-ai-hint": "dashboard app",
     },
     {
+      date: "June 2025",
       title: "Portfolio Website",
       description:
         "This very portfolio, designed to showcase my skills using modern web technologies and AI-powered content adaptation.",
@@ -112,6 +114,171 @@ export const portfolioData = {
       tags: ["GenAI", "Next.js", "Tailwind CSS"],
       link: "#",
       "data-ai-hint": "portfolio design",
+    },
+    {
+      date: "June 2025",
+      title: "Design is the shift",
+      description:
+        "Daily content with insights, ideas, and tips for designers.",
+      tags: ["Content", "Design", "Inspiration"],
+      link: "https://victorberbel.kit.com",
+      "data-ai-hint": "design blog",
+    },
+    {
+      date: "June 2025",
+      title: "Amazing design can come from anywhere",
+      description: "Stories and lessons from working with designers worldwide.",
+      tags: ["Story", "Remote Work"],
+      link: "https://victorberbel.kit.com",
+      "data-ai-hint": "global design",
+    },
+    {
+      date: "June 2025",
+      title: "How to get your motivation back as a designer",
+      description: "Tips and strategies to reignite your creative spark.",
+      tags: ["Motivation", "Creativity"],
+      link: "https://victorberbel.kit.com",
+      "data-ai-hint": "motivation",
+    },
+    {
+      date: "June 2025",
+      title: "Design is more than just pixels",
+      description: "Exploring the deeper meaning and impact of design.",
+      tags: ["Philosophy", "Design"],
+      link: "https://victorberbel.kit.com",
+      "data-ai-hint": "design philosophy",
+    },
+    {
+      date: "June 2025",
+      title: "Design is the shift",
+      description:
+        "Daily content with insights, ideas, and tips for designers.",
+      tags: ["Content", "Design", "Inspiration"],
+      link: "https://victorberbel.kit.com",
+      "data-ai-hint": "design blog",
+    },
+    {
+      date: "June 2025",
+      title: "Amazing design can come from anywhere",
+      description: "Stories and lessons from working with designers worldwide.",
+      tags: ["Story", "Remote Work"],
+      link: "https://victorberbel.kit.com",
+      "data-ai-hint": "global design",
+    },
+    {
+      date: "June 2025",
+      title: "How to get your motivation back as a designer",
+      description: "Tips and strategies to reignite your creative spark.",
+      tags: ["Motivation", "Creativity"],
+      link: "https://victorberbel.kit.com",
+      "data-ai-hint": "motivation",
+    },
+    {
+      date: "June 2025",
+      title: "Design is more than just pixels",
+      description: "Exploring the deeper meaning and impact of design.",
+      tags: ["Philosophy", "Design"],
+      link: "https://victorberbel.kit.com",
+      "data-ai-hint": "design philosophy",
+    },
+    {
+      date: "June 2025",
+      title: "Design is the shift",
+      description:
+        "Daily content with insights, ideas, and tips for designers.",
+      tags: ["Content", "Design", "Inspiration"],
+      link: "https://victorberbel.kit.com",
+      "data-ai-hint": "design blog",
+    },
+    {
+      date: "June 2025",
+      title: "Amazing design can come from anywhere",
+      description: "Stories and lessons from working with designers worldwide.",
+      tags: ["Story", "Remote Work"],
+      link: "https://victorberbel.kit.com",
+      "data-ai-hint": "global design",
+    },
+    {
+      date: "June 2025",
+      title: "How to get your motivation back as a designer",
+      description: "Tips and strategies to reignite your creative spark.",
+      tags: ["Motivation", "Creativity"],
+      link: "https://victorberbel.kit.com",
+      "data-ai-hint": "motivation",
+    },
+    {
+      date: "June 2025",
+      title: "Design is more than just pixels",
+      description: "Exploring the deeper meaning and impact of design.",
+      tags: ["Philosophy", "Design"],
+      link: "https://victorberbel.kit.com",
+      "data-ai-hint": "design philosophy",
+    },
+    {
+      date: "June 2025",
+      title: "Design is the shift",
+      description:
+        "Daily content with insights, ideas, and tips for designers.",
+      tags: ["Content", "Design", "Inspiration"],
+      link: "https://victorberbel.kit.com",
+      "data-ai-hint": "design blog",
+    },
+    {
+      date: "June 2025",
+      title: "Amazing design can come from anywhere",
+      description: "Stories and lessons from working with designers worldwide.",
+      tags: ["Story", "Remote Work"],
+      link: "https://victorberbel.kit.com",
+      "data-ai-hint": "global design",
+    },
+    {
+      date: "June 2025",
+      title: "How to get your motivation back as a designer",
+      description: "Tips and strategies to reignite your creative spark.",
+      tags: ["Motivation", "Creativity"],
+      link: "https://victorberbel.kit.com",
+      "data-ai-hint": "motivation",
+    },
+    {
+      date: "June 2025",
+      title: "Design is more than just pixels",
+      description: "Exploring the deeper meaning and impact of design.",
+      tags: ["Philosophy", "Design"],
+      link: "https://victorberbel.kit.com",
+      "data-ai-hint": "design philosophy",
+    },
+    {
+      date: "June 2025",
+      title: "Design is the shift",
+      description:
+        "Daily content with insights, ideas, and tips for designers.",
+      tags: ["Content", "Design", "Inspiration"],
+      link: "https://victorberbel.kit.com",
+      "data-ai-hint": "design blog",
+    },
+    {
+      date: "June 2025",
+      title: "Amazing design can come from anywhere",
+      description: "Stories and lessons from working with designers worldwide.",
+      tags: ["Story", "Remote Work"],
+      link: "https://victorberbel.kit.com",
+      "data-ai-hint": "global design",
+    },
+    {
+      date: "June 2025",
+      title: "How to get your motivation back as a designer",
+      description: "Tips and strategies to reignite your creative spark.",
+      tags: ["Motivation", "Creativity"],
+      link: "https://victorberbel.kit.com",
+      "data-ai-hint": "motivation",
+    },
+    {
+      date: "June 2025",
+      title: "Design is more than just pixels",
+      description: "Exploring the deeper meaning and impact of design.",
+      tags: ["Philosophy", "Design"],
+      link: "https://victorberbel.kit.com",
+      "data-ai-hint": "design philosophy",
     },
   ],
   contact: {
@@ -164,5 +331,7 @@ export const sectionIds = [
   "hero",
   ...portfolioData.sections.map((section) => section.href.replace("#", "")),
 ];
+
+export const PAGE_SIZE = 4;
 
 export type PortfolioData = typeof portfolioData;
