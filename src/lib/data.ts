@@ -1,6 +1,3 @@
-import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
-
 export const portfolioData = {
   name: "Joan Louji",
   title: "Velocity-First Engineer",
@@ -76,7 +73,7 @@ export const portfolioData = {
       period: "2021 - Present",
       description:
         "Led the development of a large-scale e-commerce platform, focusing on performance and user experience. Mentored junior developers and implemented a new component library in React and TypeScript.",
-      logo: "Briefcase",
+      icon: "Briefcase",
     },
     {
       role: "Full-Stack Developer",
@@ -84,7 +81,7 @@ export const portfolioData = {
       period: "2018 - 2021",
       description:
         "Developed and maintained various client websites and web applications using the MERN stack. Collaborated with designers to create pixel-perfect interfaces and worked on backend APIs.",
-      logo: "Briefcase",
+      icon: "Briefcase",
     },
     {
       role: "Junior Web Developer",
@@ -92,7 +89,7 @@ export const portfolioData = {
       period: "2016 - 2018",
       description:
         "Started my journey by building and maintaining WordPress sites for small businesses. Gained foundational skills in HTML, CSS, JavaScript, and PHP.",
-      logo: "Briefcase",
+      icon: "Briefcase",
     },
   ],
   projects: [
@@ -140,10 +137,15 @@ export const portfolioData = {
       {
         name: "GitHub",
         url: "https://github.com/sjlouji",
-        logo: "/images/github.png",
+        logo: "/images/github.svg",
       },
     ],
   },
 };
+
+export const sectionIds = [
+  "hero",
+  ...portfolioData.sections.map((section) => section.href.replace("#", "")),
+];
 
 export type PortfolioData = typeof portfolioData;

@@ -1,6 +1,7 @@
 "use client";
 
 import type { PortfolioData } from "@/lib/data";
+import { sectionIds } from "@/lib/data";
 
 import { Header } from "@/app/header";
 import { HeroSection } from "@/app/hero-section";
@@ -9,30 +10,83 @@ import { ExperienceSection } from "@/app/experience-section";
 import { ProjectsSection } from "@/app/projects-section";
 import { ContactSection } from "@/app/contact-section";
 import { Footer } from "@/app/footer";
-import { useScrollHash } from "@/hooks/use-scroll-hash";
+import { useState, useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 
 interface LandingPageProps {
   initialData: PortfolioData;
 }
 
 export function LandingPage({ initialData }: LandingPageProps) {
-  const content = initialData;
-  useScrollHash();
+  const [activeSection, setActiveSection] = useState("hero");
+  const lastSection = useRef<string | null>(null);
+
+  useEffect(() => {
+    const onScroll = () => {
+      let current = "hero";
+      for (const id of sectionIds) {
+        const el = document.getElementById(id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (
+            rect.top <= window.innerHeight / 2 &&
+            rect.bottom >= window.innerHeight / 2
+          ) {
+            current = id;
+          }
+        }
+      }
+      setActiveSection(current);
+      setActionSessionToUrl(current);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const setActionSessionToUrl = (section: string) => {
+    if (section && section !== lastSection.current) {
+      history.replaceState(
+        null,
+        "",
+        section === "hero"
+          ? window.location.pathname + window.location.search
+          : `#${section}`
+      );
+      lastSection.current = section;
+    }
+  };
 
   return (
-    <div className="flex flex-col min-h-[100dvh]">
-      <Header content={content} />
-      <main className="flex-1">
-        <HeroSection content={content} />
-        <AboutSection about={initialData.about} />
-        <ExperienceSection experience={content.workHistory} />
-        <ProjectsSection projects={content.projects} />
-        <hr
-          className="container mx-auto my-12 border-t-2"
-          style={{ borderColor: "#111", borderTopWidth: "2px" }}
-        />{" "}
-        <ContactSection contact={initialData.contact} />
-      </main>
+    <div className="relative min-h-screen">
+      {sectionIds.map((id) => {
+        return (
+          <motion.section
+            key={id}
+            id={id}
+            initial={false}
+            animate={
+              activeSection === id
+                ? { opacity: 1, y: 0 }
+                : { opacity: 0.3, y: 60 }
+            }
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+            className="min-h-screen flex items-center justify-center pt-20"
+          >
+            {id === "hero" && <HeroSection content={initialData} />}
+            {id === "about" && <AboutSection about={initialData.about} />}
+            {id === "experience" && (
+              <ExperienceSection experience={initialData.workHistory} />
+            )}
+            {id === "projects" && (
+              <ProjectsSection projects={initialData.projects} />
+            )}
+            {id === "contact" && (
+              <ContactSection contact={initialData.contact} />
+            )}
+          </motion.section>
+        );
+      })}
+      <Header content={initialData} />
       <Footer name={initialData.name} />
     </div>
   );
