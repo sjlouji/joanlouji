@@ -1,4 +1,6 @@
 "use client";
+import { useState, useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 
 import type { PortfolioData } from "@/lib/data";
 import { sectionIds } from "@/lib/data";
@@ -10,8 +12,6 @@ import { ExperienceSection } from "@/app/experience-section";
 import { ProjectsSection } from "@/app/projects-section";
 import { ContactSection } from "@/app/contact-section";
 import { Footer } from "@/app/footer";
-import { useState, useEffect, useRef } from "react";
-import { motion } from "framer-motion";
 
 interface LandingPageProps {
   initialData: PortfolioData;
@@ -60,7 +60,7 @@ export function LandingPage({ initialData }: LandingPageProps) {
     <div className="relative min-h-screen">
       {sectionIds.map((id) => {
         return (
-          <motion.section
+          <motion.div
             key={id}
             id={id}
             initial={false}
@@ -83,7 +83,7 @@ export function LandingPage({ initialData }: LandingPageProps) {
             {id === "contact" && (
               <ContactSection contact={initialData.contact} />
             )}
-          </motion.section>
+          </motion.div>
         );
       })}
       <Header content={initialData} />

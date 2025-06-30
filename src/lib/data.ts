@@ -32,13 +32,6 @@ export const portfolioData = {
         url: "https://medium.com/@sjlouji10",
         logo: "/images/medium.png",
       },
-      {
-        color: "bg-blue-700",
-        title: "Dev",
-        subtitle: "Check out my technical blogs, tutorials, and my discussions",
-        url: "https://dev.to/sjlouji",
-        logo: "/images/dev.png",
-      },
     ],
     skillsDescription: "Skills I'm familiar with and my interests",
     skills: [
@@ -73,7 +66,7 @@ export const portfolioData = {
       period: "2021 - Present",
       description:
         "Led the development of a large-scale e-commerce platform, focusing on performance and user experience. Mentored junior developers and implemented a new component library in React and TypeScript.",
-      icon: "Briefcase",
+      icon: "Code",
     },
     {
       role: "Full-Stack Developer",
@@ -81,7 +74,7 @@ export const portfolioData = {
       period: "2018 - 2021",
       description:
         "Developed and maintained various client websites and web applications using the MERN stack. Collaborated with designers to create pixel-perfect interfaces and worked on backend APIs.",
-      icon: "Briefcase",
+      icon: "Code",
     },
     {
       role: "Junior Web Developer",
@@ -89,7 +82,7 @@ export const portfolioData = {
       period: "2016 - 2018",
       description:
         "Started my journey by building and maintaining WordPress sites for small businesses. Gained foundational skills in HTML, CSS, JavaScript, and PHP.",
-      icon: "Briefcase",
+      icon: "Code",
     },
   ],
   projects: [
@@ -122,8 +115,37 @@ export const portfolioData = {
     },
   ],
   contact: {
+    heading: "Ideas Don't Build\nThemselves. Let's Talk",
+    subheading:
+      "I'm always open to collaborations or conversations. Drop me a message anytime.",
     email: "sjlouji10@gmail.com",
+    addressLabel: "My Address",
+    address: [
+      "Joan Louji",
+      "13/7, Lake Area 3rd Cross Street",
+      "Nungambakkam, Chennai – 34.",
+    ],
+    socialsLabel: "Follow Me",
+    location: "Chennai, India",
+    availability: "Open to opportunities",
+    preferredContact: "Email preferred",
+    newsletter: {
+      title: "Stay Updated",
+      description: "Subscribe to my Medium newsletter for tech insights",
+      url: "https://medium.com/@sjlouji10",
+      buttonText: "Subscribe to Medium",
+    },
     socials: [
+      {
+        name: "GitHub",
+        url: "https://github.com/sjlouji",
+        logo: "/images/github.svg",
+      },
+      {
+        name: "Medium",
+        url: "https://medium.com/@sjlouji10",
+        logo: "/images/medium.png",
+      },
       {
         name: "LinkedIn",
         url: "https://linkedin.com/in/sjlouji",
@@ -133,11 +155,6 @@ export const portfolioData = {
         name: "Twitter",
         url: "https://x.com/JoanLouji",
         logo: "/images/icons8-x-500.png",
-      },
-      {
-        name: "GitHub",
-        url: "https://github.com/sjlouji",
-        logo: "/images/github.svg",
       },
     ],
   },

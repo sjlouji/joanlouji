@@ -1,6 +1,6 @@
 import { type ReactNode } from "react";
 import { cn } from "@/lib/utils";
-import { AnimatedSection } from "../components/animated-section";
+import { AnimatedSection } from "@/components/animated-section";
 
 interface SectionWrapperProps {
   id: string;

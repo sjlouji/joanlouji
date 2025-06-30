@@ -76,7 +76,7 @@ export function AboutSection({ about }: { about: AboutSectionProps }) {
             <div className="mt-10">
               <Marquee
                 gradient
-                gradientColor="white"
+                gradientColor="rgb(239 246 255 / var(--tw-bg-opacity, 1))"
                 gradientWidth={150}
                 pauseOnHover={true}
                 speed={50}
