@@ -5,7 +5,6 @@ export async function fetchMediumPosts(username: string, limit = 10) {
   const feed = await parser.parseURL(`https://medium.com/feed/@${username}`);
   return feed.items.slice(0, limit).map((item) => {
     let image = "";
-    console.log(item);
     if (item?.enclosure?.url) {
       image = item.enclosure.url;
     } else if (item?.["content:encoded"]) {
