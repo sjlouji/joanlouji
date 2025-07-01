@@ -13,6 +13,7 @@ import { ProjectsSection } from "@/app/projects-section";
 import { ContactSection } from "@/app/contact-section";
 import { Footer } from "@/app/footer";
 import { PostSection } from "@/app/post-section";
+import { ResumeSection } from "@/app/resume-section";
 
 export function LandingPage({
   initialData,
@@ -61,6 +62,7 @@ export function LandingPage({
     about: <AboutSection about={initialData.about} />,
     works: <ProjectsSection projects={initialData.works} />,
     posts: <PostSection blogs={blogs} />,
+    resume: <ResumeSection />,
     contact: <ContactSection contact={initialData.contact} />,
   };
 

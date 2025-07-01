@@ -1,3 +1,13 @@
+import {
+  Lightbulb,
+  Star,
+  Zap,
+  TrendingUp,
+  ShoppingBag,
+  Code2,
+} from "lucide-react";
+import type { ResumeData } from "@/types/resume";
+
 export const portfolioData = {
   name: "Joan Louji",
   title: "Velocity-First Engineer",
@@ -8,6 +18,7 @@ export const portfolioData = {
     { name: "About", href: "#about" },
     { name: "Works", href: "#works" },
     { name: "Posts", href: "#posts" },
+    { name: "Resume", href: "#resume" },
     { name: "Contact", href: "#contact" },
   ],
   about: {
@@ -299,6 +310,152 @@ export const portfolioData = {
       },
     ],
   },
+};
+
+export const initialData: ResumeData = {
+  personalDetails: {
+    name: "EDWARD MITCHELL",
+    title: "Web Developer | HTML, CSS, PHP | WordPress Expert",
+    phone: "+44 20 7123 4567",
+    email: "help@enhancv.com",
+    linkedin: "linkedin.com",
+    location: "Reading, United Kingdom",
+  },
+  summary:
+    "Enthusiastic Web Developer with 5+ years of experience in creating responsive websites and a proven track record in SEO optimisation. Expertise in HTML, CSS, PHP, WordPress and WooCommerce with a passion for delivering optimal user experience.",
+  experience: [
+    {
+      id: "exp1",
+      title: "Senior Web Developer",
+      company: "Digital Dynamics Ltd",
+      startDate: "06/2019",
+      endDate: "Present",
+      location: "Reading, United Kingdom",
+      description: [
+        "Led the redesigning of the company's main e-commerce site, increasing customer satisfaction scores by 20% through improved layout and usability.",
+        "Spearheaded the integration of a new payment gateway that reduced checkout process time by 35%, directly impacting sales growth.",
+        "Improved website load times by 25% through advanced coding techniques, resulting in a lower bounce rate and higher engagement.",
+        "Collaborated with the marketing team on SEO strategies that led to a 40% increase in organic traffic within 12 months.",
+        "Managed updates and security patches for a portfolio of 15+ WordPress websites, ensuring 99.9% uptime.",
+        "Developed custom plugins and themes tailored to business needs, enhancing site functionality and user experience.",
+      ],
+    },
+    {
+      id: "exp2",
+      title: "Web Developer",
+      company: "Tech Solutions Inc",
+      startDate: "02/2016",
+      endDate: "05/2019",
+      location: "Reading, United Kingdom",
+      description: [
+        "Revamped user interface for client's main web application, increasing customer engagement by 30%.",
+        "Coded responsive layout for multiple websites attended to reach a wide audience, achieving compatibility across 98% of devices.",
+        "Played a key role in the implementation of a robust backup strategy that decreased potential data loss exposure by 90%.",
+        "Initiated the use of Google Webmaster tools to monitor website performance, which identified critical areas for improvement.",
+        "Contributed to team efforts in SEO optimisation that escalated the clients' page ranking into the top 10 search results.",
+      ],
+    },
+    {
+      id: "exp3",
+      title: "Front-end Developer",
+      company: "Creative Web Studio",
+      startDate: "09/2013",
+      endDate: "01/2016",
+      location: "London, United Kingdom",
+      description: [
+        "Developed and implemented a new CSS framework which reduced time to market for new web pages by 15%.",
+        "Increased website accessibility ratings by ensuring compliance with WCAG 2.0 standards.",
+        "Customised WordPress themes to reflect brand guidelines for 5 major clients.",
+        "Provided maintenance and enhancement support for a suite of WordPress ecommerce sites.",
+      ],
+    },
+  ],
+  education: [
+    {
+      id: "edu1",
+      degree: "Master of Science in Web Development",
+      university: "University of London",
+      startDate: "01/2011",
+      endDate: "01/2013",
+      location: "London, United Kingdom",
+    },
+    {
+      id: "edu2",
+      degree: "Bachelor of Science in Computer Science",
+      university: "University of Reading",
+      startDate: "01/2007",
+      endDate: "01/2011",
+      location: "Reading, United Kingdom",
+    },
+  ],
+  achievements: [
+    {
+      id: "ach1",
+      icon: Lightbulb,
+      title: "Website Redesign",
+      description:
+        "Orchestrated complete overhaul of main ecommerce site leading to increased user satisfaction and average session duration.",
+    },
+    {
+      id: "ach2",
+      icon: Star,
+      title: "Streamlined Checkout Process",
+      description:
+        "Successfully integrated new payment solution halving checkout time and supporting increased transaction volumes.",
+    },
+    {
+      id: "ach3",
+      icon: Zap,
+      title: "Optimisation Expertise",
+      description:
+        "Reduced load times and bounce rates across multiple projects by employing cutting edge coding techniques.",
+    },
+    {
+      id: "ach4",
+      icon: TrendingUp,
+      title: "SEO Success",
+      description:
+        "Drove a 40% increase in organic traffic within a year by innovating and implementing new SEO strategies.",
+    },
+  ],
+  skills: [
+    "HTML",
+    "CSS",
+    "PHP",
+    "WordPress",
+    "WooCommerce",
+    "Search Engine Optimisation",
+  ],
+  courses: [
+    {
+      id: "crs1",
+      name: "Advanced WordPress Development",
+      institution:
+        "Focused on creating custom plugins and themes, provided by WP Academy.",
+    },
+    {
+      id: "crs2",
+      name: "SEO Fundamentals Course",
+      institution:
+        "Detailed course on SEO strategies and tools, given by Moz Academy.",
+    },
+  ],
+  passions: [
+    {
+      id: "pas1",
+      icon: ShoppingBag,
+      name: "E-Commerce Innovation",
+      description:
+        "I am deeply interested in the evolving trends and technologies shaping online retail experiences.",
+    },
+    {
+      id: "pas2",
+      icon: Code2,
+      name: "Code Optimisation",
+      description:
+        "Passionate about enhancing website performance through advanced code optimisation techniques.",
+    },
+  ],
 };
 
 export const sectionIds = [

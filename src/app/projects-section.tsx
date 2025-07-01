@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Pagination } from "@/components/pagination";
 import { SectionWrapper } from "@/app/section-wrapper";
 import type { Project, ProjectsSectionProps } from "@/types/project";
-import { PAGE_SIZE } from "@/lib/data";
+import { initialData, PAGE_SIZE } from "@/lib/data";
 
 export function ProjectsSection({ projects }: ProjectsSectionProps) {
   const [page, setPage] = useState(1);
