@@ -9,7 +9,7 @@ interface AnimatedNavLinkProps {
 
 export function AnimatedNavLink({ href, children }: AnimatedNavLinkProps) {
   return (
-    <Link href={href} passHref legacyBehavior prefetch={false}>
+    <Link href={href} passHref prefetch={false}>
       <motion.a
         whileHover={{ scale: 1.08, color: "#000", opacity: 0.85 }}
         whileTap={{ scale: 0.95, color: "#222" }}

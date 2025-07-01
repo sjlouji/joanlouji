@@ -18,7 +18,6 @@ export const portfolioData = {
     { name: "About", href: "#about" },
     { name: "Works", href: "#works" },
     { name: "Posts", href: "#posts" },
-    { name: "Resume", href: "#resume" },
     { name: "Contact", href: "#contact" },
   ],
   about: {
@@ -42,6 +41,13 @@ export const portfolioData = {
         subtitle: "Read my articles on software engineering.",
         url: "https://medium.com/@sjlouji10",
         logo: "/images/medium.png",
+      },
+      {
+        color: "bg-blue-600",
+        title: "Resume",
+        subtitle: "View my professional resume and experience.",
+        url: "#",
+        logo: "/images/cv.png",
       },
     ],
     skillsDescription: "Skills I'm familiar with and my interests",

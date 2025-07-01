@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { Container, Row, Col } from "react-grid-system";
-import { FileText } from "lucide-react";
 import Marquee from "react-fast-marquee";
 import { motion } from "framer-motion";
 import { useState, useRef } from "react";
@@ -16,17 +15,6 @@ import { Button } from "@/components/button";
 
 export function AboutSection({ about }: { about: AboutSectionProps }) {
   const [isResumeOpen, setIsResumeOpen] = useState(false);
-
-  const allLinks = [
-    ...about.links,
-    {
-      color: "bg-blue-600",
-      title: "Resume",
-      subtitle: "View my professional resume and experience.",
-      url: "#",
-      logo: "/images/cv.png",
-    },
-  ];
 
   const previewRef = useRef<HTMLDivElement>(null);
 
@@ -84,7 +72,7 @@ export function AboutSection({ about }: { about: AboutSectionProps }) {
             <div className="space-y-6 mt-8 md:mt-0">
               <div className="flex flex-wrap items-center gap-2 mt-2">
                 <div className="divide-y w-full">
-                  {allLinks.map((link) => {
+                  {about.links.map((link) => {
                     if (link.title === "Resume") {
                       return (
                         <div
