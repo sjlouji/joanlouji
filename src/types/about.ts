@@ -7,6 +7,8 @@ export interface AboutSectionProps {
     title: string;
     subtitle: string;
     url: string;
+    remoteMethod?: string;
+    path?: string;
   }[];
   skills: {
     name: string;
